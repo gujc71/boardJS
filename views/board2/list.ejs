@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>board</title>
+</head>
+<body>
+    <a href="/board2/form">글쓰기</a>
+                    
+    <table border="1" style="width:600px">
+        <caption>게시판</caption>
+        <colgroup>
+            <col width='8%' />
+            <col width='*%' />
+            <col width='15%' />
+            <col width='15%' />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th> 
+                <th>제목</th>
+                <th>등록자</th>
+                <th>등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%
+             for(var i=0; i<rows.length; i++) {
+        %>
+            <tr>
+                <td><%=rows[i].BRDNO%></td>
+                <td><a href='/board2/read?brdno=<%=rows[i].BRDNO%>'><%=rows[i].BRDTITLE%></a></td>
+                <td><%=rows[i].BRDWRITER%></td>
+                <td><%=rows[i].BRDDATE%></td>
+            </tr>
+        <%
+             }
+        %>
+        </tbody>
+    </table>    
+</body>
+</html>

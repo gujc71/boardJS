@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>board</title>
+</head>
+<body>
+        <table border="1" style="width:600px">
+            <caption>게시판</caption>
+            <colgroup>
+                <col width='15%' />
+                <col width='*%' />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>작성자</td> 
+                    <td><%=row.BRDWRITER%></td> 
+                </tr>
+                <tr>
+                    <td>제목</td> 
+                    <td><%=row.BRDTITLE%></td> 
+                </tr>
+                <tr>
+                    <td>내용</td> 
+                    <td><%=row.BRDMEMO%></td> 
+                </tr>
+            </tbody>
+        </table>    
+        <a href="#" onclick="history.back(-1)">돌아가기</a>
+        <a href="/board2/delete?brdno=<%=row.BRDNO%>">삭제</a>
+        <a href="/board2/form?brdno=<%=row.BRDNO%>">수정</a>
+</body>
+</html>
